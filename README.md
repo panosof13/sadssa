@@ -64,9 +64,12 @@ The following example demonstrates how easy will be to update DNS Records with T
 </ul>
 
 <p> </p>
+
 ```sh
 $ nslookup 83.212.113.216
 ```
+---
+
 <p> The following example shows how the DNS server  resolves the IP address of the external domain without affect with informations the DNS TXT records.</p>
 
 ```sh
