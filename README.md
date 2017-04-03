@@ -60,11 +60,11 @@ Lookup lookup = null;
         }
 ```
 ssss
-```sh
+```
 $nslookup 83.212.113.216
 ```
 
-``sh
+``
 $Server:  dns-any-03.forthnet.gr
 $Address:  2a02:2148:82:8053::53
 
