@@ -24,7 +24,7 @@ The following example demonstrates how easy will be to update DNS Records with T
         System.out.println(response.getHeader().toString());
 ```
 ---
-<p>This lookup will list DNS Text (TXT) records for a domain. The DNS lookup is done directly against the domain's authoritative name servers, so changes to DNS TXT Records should show up instantly.As we can see below if we run the given code with the correct DNS Zone record that we create before as well as with the same resolver,we will get instantly DNS TXT Records.</p>
+<p>This lookup will list DNS Text (TXT) records for a domain. The DNS lookup is done directly against the domain's authoritative name servers, so changes to DNS TXT Records should show up instantly. As we can see below if we run the given code with the correct DNS Zone record that we create before as well as with the same resolver,we will get instantly DNS TXT Records.</p>
 
 ```Java
 Lookup lookup = null;
@@ -58,11 +58,13 @@ Lookup lookup = null;
 ```
 ---
 <p>In order to test the lifecycle of our process we can open a cmd terminal and the then we can type the below command.</p>
+   -At a command prompt, type Nslookup, and then press ENTER.
+   -Type server  address, where IP address is the IP address of your external DNS server.
 
 ```sh
 $ nslookup 83.212.113.216
 ```
-<p></p>
+<p> The following example shows how the DNS server  resolves the IP address of the external domain without affect the DNS TXT records.</p>
 
 ```sh
 $ Server:  dns-any-03.forthnet.gr
