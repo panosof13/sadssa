@@ -6,19 +6,14 @@ Dynamic updates are sent or refreshed periodically. By default, computers send a
 When the DNS Client service registers host (A) and pointer (PTR) resource records for a computer, it uses a default caching Time to Live (TTL) of 15 minutes for host records. This determines how long other DNS servers and clients cache a computer's records when the records are included in a query response.
 
 
-```sh
-cd dillinger
-docker build -t joemccann/dillinger:${package.json.version}
-```
-This will create the dillinger image and pull in the necessary dependencies. Be sure to swap out `${package.json.version}` with the actual version of Dillinger.
-
-Once done, run the Docker image and map the port to whatever you wish on your host. In this example, we simply map port 8000 of the host to port 80 of the Docker (or whatever port was exposed in the Dockerfile):
+#Example
+The following example demonstrates how easy will be to update DNS Records with TXT usage. A TXT Record is a resource record in the Domain Name System (DNS) used to hold some plaintext information about a particular hostname/zone provided to sources outside your domain.
 
 ```Java
         Name zone = Name.fromString("test.aegean.gr.");
         Name host = Name.fromString("mitsakos", zone);
         Update update = new Update(zone);
-        update.delete(host);
+        update.resolve(host, Type.TXT, 600, "asdass.test.aegean.gr");
 
         Resolver res = new SimpleResolver("83.212.113.216");
 
