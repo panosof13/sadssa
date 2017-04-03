@@ -13,19 +13,34 @@ Once done, run the Docker image and map the port to whatever you wish on your ho
 
 
 ```Java
-package Properties;
+Lookup lookup = null;
+        try {
+            lookup = new Lookup("test.aegean.gr", Type.TXT);
+            lookup.setResolver(new SimpleResolver("83.212.113.216"));
+            Record[] records = lookup.run();
+            if (lookup.getResult() != Lookup.SUCCESSFUL && lookup.getResult() != Lookup.TYPE_NOT_FOUND) {
+                System.out.println("Error");
+            } else {
+                for (Record rec : records) {
+                    {
+                        if (rec instanceof TXTRecord) {
+                            TXTRecord txt = (TXTRecord) rec;
+                            for (Iterator j = txt.getStrings().iterator(); j.hasNext();) {
+                                responseMessage = (String) j.next();
+                            }
+                        } else if (rec instanceof ARecord) {
+                            listingType = ((ARecord) rec).getAddress().getHostAddress();
+                        }
+                    }
+                    System.out.println("Found!");
+                    System.out.println("Response Message: " + responseMessage);
+                    System.out.println("Listing Type: " + listingType);
+                }
+            }
 
-public class Properties {
-
-    //socket properties
-    public static final int ConnectionPort = 5555;
-    public static final int MaxConnections = 100;
-    public static final int timeout = 10 * 1000;
-
-    public static final String END_PROTOCOL = "EndSession";
-    //Put your message which you want taken from Server
-   public static final String PlainText_UTF8 = "Hello Client Send me again Enrypted Message";
-   }
+        } catch (TextParseException e) {
+            throw new RuntimeException(e);
+        }
 ```
 
 
