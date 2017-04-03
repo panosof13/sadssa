@@ -66,11 +66,13 @@ Lookup lookup = null;
 ---
 In order to test the lifecycle of our process we can open a cmd terminal and the then we can type the below command.
 
-``sh
-$nslookup 83.212.113.216
+``
+$ nslookup 83.212.113.216
 ```
+
 ---
-``sh
+
+``
 $ Server:  dns-any-03.forthnet.gr
 $ Address:  2a02:2148:82:8053::53
 
