@@ -58,10 +58,10 @@ The following example demonstrates how easy will be to update DNS Records with T
 ```
 ---
 <p>In order to test the lifecycle of our process we can open a cmd terminal and the then we can type the below command.</p>
-   * Unordered list can use asterisks
-   * At a command prompt, type Nslookup, and then press ENTER.
-   * Type server  address, where IP address is the IP address of your external DNS server.
-
+<ul>
+<li><p>At a command prompt, type Nslookup, and then press ENTER.</p></li>
+<li><p>Type server  address, where IP address is the IP address of your external DNS server.</p></li>
+</ul>
 ```sh
 $ nslookup 83.212.113.216
 ```
