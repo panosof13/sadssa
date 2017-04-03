@@ -60,6 +60,16 @@ Lookup lookup = null;
         }
 ```
 
+```sh
+nslookup 83.212.113.216
+```
 
+``sh
+Server:  dns-any-03.forthnet.gr
+Address:  2a02:2148:82:8053::53
+
+Name:    snf-665958.vm.okeanos.grnet.gr
+Address:  83.212.113.216
+```
 
 
