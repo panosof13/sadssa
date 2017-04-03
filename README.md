@@ -27,6 +27,7 @@ Once done, run the Docker image and map the port to whatever you wish on your ho
         Message response = res.send(update);
         System.out.println(response.getHeader().toString());
 ```
+---
 DDDDDSS
 
 ```Java
@@ -59,6 +60,7 @@ Lookup lookup = null;
             throw new RuntimeException(e);
         }
 ```
+---
 ssss
 ```
 $nslookup 83.212.113.216
