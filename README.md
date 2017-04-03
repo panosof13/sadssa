@@ -1,7 +1,10 @@
 ### DNS USAGE
-Dillinger is very easy to install and deploy in a Docker container.
+Domain Name System (DNS) client computers can use dynamic update to register and dynamically update their resource records with a DNS server whenever changes occur. This reduces the need for manual administration of zone records, especially for clients that frequently move or change locations and use Dynamic Host Configuration Protocol (DHCP) to obtain an IP address.
 
-By default, the Docker will expose port 80, so change this within the Dockerfile if necessary. When ready, simply use the Dockerfile to build the image.
+Dynamic updates are sent or refreshed periodically. By default, computers send a refresh once every seven days. If the update results in no changes to zone data, the zone remains at its current version and no changes are written. Updates result in actual zone changes or increased zone transfer only if names or addresses actually change.
+
+When the DNS Client service registers host (A) and pointer (PTR) resource records for a computer, it uses a default caching Time to Live (TTL) of 15 minutes for host records. This determines how long other DNS servers and clients cache a computer's records when the records are included in a query response.
+
 
 ```sh
 cd dillinger
@@ -28,7 +31,7 @@ Once done, run the Docker image and map the port to whatever you wish on your ho
         System.out.println(response.getHeader().toString());
 ```
 ---
-DDDDDSS
+This lookup will list DNS Text (TXT) records for a domain. The DNS lookup is done directly against the domain's authoritative name servers, so changes to DNS TXT Records should show up instantly.As we can see below if we run the given code with the correct DNS Zone record that we create before as well as with the same resolver,we will get instantly DNS TXT Records.
 
 ```Java
 Lookup lookup = null;
@@ -61,17 +64,19 @@ Lookup lookup = null;
         }
 ```
 ---
-ssss
-```
+In order to test the lifecycle of our process we can open a cmd terminal and the then we can type the below command.
+
+``sh
 $nslookup 83.212.113.216
 ```
+---
+``sh
+$ Server:  dns-any-03.forthnet.gr
+$ Address:  2a02:2148:82:8053::53
 
-``
-$Server:  dns-any-03.forthnet.gr
-$Address:  2a02:2148:82:8053::53
-
-$Name:    snf-665958.vm.okeanos.grnet.gr
-$Address:  83.212.113.216
+$ Name:    snf-665958.vm.okeanos.grnet.gr
+$ Address:  83.212.113.216
 ```
+---
 
 
