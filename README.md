@@ -8,10 +8,10 @@
 The following example demonstrates how easy will be to update DNS Records with TXT usage. A TXT Record is a resource record in the Domain Name System (DNS) used to hold some plaintext information about a particular hostname/zone provided to sources outside your domain.
 
 ```Java
-        Name zone = Name.fromString("test.aegean.gr.");
-        Name host = Name.fromString("mitsakos", zone);
+        Name zone = Name.fromString("aegean.gr.");
+        Name host = Name.fromString("Pineapple", zone);
         Update update = new Update(zone);
-        update.resolve(host, Type.TXT, 600, "asdass.test.aegean.gr");
+        update.replace(host, Type.TXT, 600, "PutYourMessageHere");
 
         Resolver res = new SimpleResolver("83.212.113.216");
 
@@ -27,9 +27,9 @@ The following example demonstrates how easy will be to update DNS Records with T
 <p>This lookup will list DNS Text (TXT) records for a domain. The DNS lookup is done directly against the domain's authoritative name servers, so changes to DNS TXT Records should show up instantly. As we can see below if we run the given code with the correct DNS Zone record that we create before as well as with the same resolver,we will get instantly DNS TXT Records.</p>
 
 ```Java
-Lookup lookup = null;
+   Lookup lookup = null;
         try {
-            lookup = new Lookup("83.212.113.216.test.aegean.gr", Type.TXT);
+            lookup = new Lookup("Pineapple.aegean.gr", Type.TXT);
             lookup.setResolver(new SimpleResolver("83.212.113.216"));
             Record[] records = lookup.run();
             if (lookup.getResult() != Lookup.SUCCESSFUL && lookup.getResult() != Lookup.TYPE_NOT_FOUND) {
@@ -58,7 +58,8 @@ Lookup lookup = null;
 ```
 ---
 <p>In order to test the lifecycle of our process we can open a cmd terminal and the then we can type the below command.</p>
-  Markup : * At a command prompt, type Nslookup, and then press ENTER.
+   * Unordered list can use asterisks
+   * At a command prompt, type Nslookup, and then press ENTER.
    * Type server  address, where IP address is the IP address of your external DNS server.
 
 ```sh
