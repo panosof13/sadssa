@@ -58,8 +58,8 @@ Lookup lookup = null;
 ```
 ---
 <p>In order to test the lifecycle of our process we can open a cmd terminal and the then we can type the below command.</p>
-   -At a command prompt, type Nslookup, and then press ENTER.
-   -Type server  address, where IP address is the IP address of your external DNS server.
+   *At a command prompt, type Nslookup, and then press ENTER.
+   *Type server  address, where IP address is the IP address of your external DNS server.
 
 ```sh
 $ nslookup 83.212.113.216
